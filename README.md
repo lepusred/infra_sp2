@@ -4,13 +4,13 @@
 
  **api_yamdb** дает возможность передавать данные с помощью **REST API** интерфейса, доступные действия:
 
-- регистрация пользоватея
+- регистрация пользователя
 
 - получение или обновление токена
 
 - получение полного списка произведений
 
-- посмотр уже имеющихся отзывов или добавление свого
+- просмотр уже имеющихся отзывов или добавление своего
 
 - добавление комментария к другим отзывам
 
@@ -20,45 +20,44 @@
 
   *Замечание:* Для работы **redoc** необходимо в *settings.py* установить *DEBUG=True*
 
-### Как запустить проект:
+### Как запустить проект: 
+
+В консоли bash:
 
 Клонируйте репозиторий в командной строке в нужную вам папку:
 
 ```
-git clone https://github.com/semenvanyushin/api_yamdb.git
+git clone https://github.com/lepusred/infra_sp2.git
 ```
 
-Cоздайте и активировать виртуальное окружение в той же папке:
+Перейдите в папку infra_sp2:
 
 ```
-python3 -m venv env
+cd /infra_sp2
 ```
 
-```
-source env/bin/activate
-```
-
-Установите зависимости из файла requirements.txt:
+Cоберите контейнеры и запустите их внутри этой папки:
 
 ```
-python3 -m pip install --upgrade pip
-```
-
-```
-pip install -r requirements.txt
+docker-compose up -d --build
 ```
 
 Выполните миграции:
 
 ```
-python3 manage.py migrate
+docker-compose exec web python manage.py migrate
 ```
 
-Запустите проект:
+Создайте суперпользователя:
 
 ```
-python3 manage.py runserver
+docker-compose exec web python manage.py createsuperuser
+```
 
+Подгрузите статику:
+
+```
+docker-compose exec web python manage.py collectstatic --no-input
 ```
 
 Теперь можно посмотреть список эндпоинов по ссылке
