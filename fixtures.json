@@ -1,0 +1,39 @@
+[{
+    "model": "reviews.category",
+    "pk": 1,
+    "fields": {
+        "name": "rin",
+        "slug": "rin"
+    }
+},
+{
+    "model": "reviews.title",
+    "pk": 3,
+    "fields": {
+        "name": "times",
+        "year": 2010,
+        "description": "lifestyle",
+        "category": 1
+    }
+},
+{
+    "model": "reviews.user",
+    "pk": 1,
+    "fields": {
+        "password": "exemple",
+        "last_login": "2023-01-29T20:47:11.103Z",
+        "is_superuser": true,
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-01-29T20:46:59.512Z",
+        "username": "ivan",
+        "email": "ivan@ivan.ru",
+        "first_name": "",
+        "last_name": "",
+        "bio": "",
+        "role": "user",
+        "confirmation_code": "",
+        "groups": [],
+        "user_permissions": []
+    }
+}]
